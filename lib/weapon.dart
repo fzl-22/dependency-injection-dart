@@ -9,7 +9,7 @@ class Weapon {
 
   Future<void> inflictDamage() async {
     Future.delayed(
-      Duration(seconds: 3),
+      Duration(seconds: 1),
       () => print('$name inflicted $damage damage!'),
     );
   }
