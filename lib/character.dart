@@ -11,6 +11,11 @@ class Character {
 
   Future<void> attack() async {
     print('$name attacking...');
-    await weapon.inflictDamage();
+
+    try {
+      await weapon.inflictDamage();
+    } catch (e) {
+      print(e.toString());
+    }
   }
 }

@@ -4,7 +4,7 @@ import 'package:dependency_injection_dart/weapon.dart';
 void main(List<String> args) async {
   final enma = Sword(
     name: 'Enma',
-    damage: 100,
+    damage: 0,
   );
 
   final roronoaZoro = Character(

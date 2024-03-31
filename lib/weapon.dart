@@ -13,10 +13,18 @@ class Sword implements Weapon {
 
   @override
   Future<void> inflictDamage() async {
-    await Future.delayed(
-      Duration(seconds: 1),
-      () => print('$name inflicted $damage damage!'),
-    );
+    try {
+      if (damage <= 0) {
+        throw Exception("No damage was inflicted!");
+      }
+
+      await Future.delayed(
+        Duration(seconds: 1),
+        () => print('$name inflicted $damage damage!'),
+      );
+    } catch (e) {
+      rethrow;
+    }
   }
 }
 
