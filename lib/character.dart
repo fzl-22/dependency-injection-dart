@@ -3,21 +3,18 @@ import 'package:dependency_injection_dart/weapon.dart';
 class Character {
   const Character({
     required this.name,
-    required this.weaponName,
-    required this.weaponDamage,
+    required this.weapon,
   });
 
   final String name;
-  final String weaponName;
-  final double weaponDamage;
+  final Weapon weapon;
 
   void attack() {
-    final weapon = Weapon(
-      name: weaponName,
-      damage: weaponDamage,
-    );
-
     print('$name attacking...');
-    weapon.inflictDamage();
+    try {
+      weapon.inflictDamage();
+    } catch (e) {
+      print(e);
+    }
   }
 }
